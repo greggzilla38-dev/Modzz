@@ -38,6 +38,8 @@
             display: none;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            width: 100%;
         }
         .page.active {
             display: flex;
@@ -52,9 +54,9 @@
             background-color: #131825;
             border: 1px solid #1f293d;
             border-radius: 12px;
-            padding: 16px 20px;
-            width: 320px;
-            margin: 8px 0;
+            padding: 24px 28px;
+            width: 420px;
+            margin: 10px 0;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: all 0.2s ease;
@@ -65,13 +67,13 @@
         }
         .title {
             color: #ff3333;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .desc {
             color: #8b949e;
-            font-size: 13px;
+            font-size: 14px;
         }
         #copyNotification {
             position: fixed;
@@ -101,13 +103,18 @@
         <div class="desc">Select a tab above to view mods.</div>
     </div>
 
-    <!-- Moonlit Page Content (Only MoonlitV2 link card) -->
+    <!-- Moonlit Page Content (Centered, larger, with both Moonlit files) -->
     <div id="moonlit" class="page">
         <h1>Moonlit Mods</h1>
 
         <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
             <div class="title">MoonlitV2</div>
             <div class="desc">MoonlitV2 Menu Download</div>
+        </div>
+
+        <div class="card" onclick="copyLink('https://www.meta.com/en-gb/experiences/lightning-launcher/8715195505254856/')">
+            <div class="title">Lightning Launcher</div>
+            <div class="desc">Lightning Launcher Open Settings</div>
         </div>
     </div>
 
