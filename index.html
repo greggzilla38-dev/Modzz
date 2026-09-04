@@ -21,6 +21,16 @@
             font-size: 26px;
             letter-spacing: 1px;
         }
+        .page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .page.active {
+            display: flex;
+        }
         .card {
             background-color: #131825;
             border: 1px solid #1f293d;
@@ -62,16 +72,38 @@
 </head>
 <body>
 
-    <h1>Modzz</h1>
+    <!-- Home Page View: Just the centered "Moonlit" tab card -->
+    <div id="home" class="page active">
+        <h1>Modzz</h1>
+        <div class="card" onclick="showMoonlitPage()">
+            <div class="title">Moonlit</div>
+            <div class="desc">Click to view Moonlit files</div>
+        </div>
+    </div>
 
-    <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
-        <div class="title">Moonlit</div>
-        <div class="desc">Moonlit Menu Download</div>
+    <!-- Moonlit Page View: Contains both MoonlitV2 and Lightning Launcher cards -->
+    <div id="moonlit" class="page">
+        <h1>Moonlit Mods</h1>
+
+        <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
+            <div class="title">MoonlitV2</div>
+            <div class="desc">MoonlitV2 Menu Download</div>
+        </div>
+
+        <div class="card" onclick="copyLink('https://www.meta.com/en-gb/experiences/lightning-launcher/8715195505254856/')">
+            <div class="title">Lightning Launcher</div>
+            <div class="desc">Lightning Launcher Open Settings</div>
+        </div>
     </div>
 
     <div id="copyNotification">Link copied! Paste into your browser</div>
 
     <script>
+    function showMoonlitPage() {
+        document.getElementById('home').classList.remove('active');
+        document.getElementById('moonlit').classList.add('active');
+    }
+
     function copyLink(url) {
         navigator.clipboard.writeText(url);
         const note = document.getElementById("copyNotification");
