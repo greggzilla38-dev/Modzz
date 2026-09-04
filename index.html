@@ -15,6 +15,33 @@
             min-height: 100vh;
             margin: 0;
         }
+        .nav-bar {
+            position: absolute;
+            top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-btn {
+            background-color: #131825;
+            border: 1px solid #1f293d;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .nav-btn:hover {
+            border-color: #ff3333;
+        }
+        .page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page.active {
+            display: flex;
+        }
         h1 {
             color: #ffffff;
             margin-bottom: 25px;
@@ -62,21 +89,41 @@
 </head>
 <body>
 
-    <h1>Modzz</h1>
-
-    <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
-        <div class="title">MoonlitV2</div>
-        <div class="desc">MoonlitV2 Menu Download</div>
+    <!-- Top Navigation Tabs -->
+    <div class="nav-bar">
+        <button class="nav-btn" onclick="switchPage('home')">Home</button>
+        <button class="nav-btn" onclick="switchPage('moonlit')">Moonlit</button>
     </div>
 
-    <div class="card" onclick="copyLink('PASTE_LIGHTNING_LAUNCHER_LINK_HERE')">
-        <div class="title">Lightning Launcher</div>
-        <div class="desc">Lightning Launcher Open Settings</div>
+    <!-- Home Page Content -->
+    <div id="home" class="page active">
+        <h1>Welcome to Modzz</h1>
+        <div class="desc">Select a tab above to view mods.</div>
+    </div>
+
+    <!-- Moonlit Page Content (With your copyable cards) -->
+    <div id="moonlit" class="page">
+        <h1>Moonlit Mods</h1>
+
+        <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
+            <div class="title">MoonlitV2</div>
+            <div class="desc">MoonlitV2 Menu Download</div>
+        </div>
+
+        <div class="card" onclick="copyLink('https://www.meta.com/en-gb/experiences/lightning-launcher/8715195505254856/')">
+            <div class="title">Lightning Launcher</div>
+            <div class="desc">Lightning Launcher Open Settings</div>
+        </div>
     </div>
 
     <div id="copyNotification">Link copied! Paste into your browser</div>
 
     <script>
+    function switchPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+    }
+
     function copyLink(url) {
         navigator.clipboard.writeText(url);
         const note = document.getElementById("copyNotification");
