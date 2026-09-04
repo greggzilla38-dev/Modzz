@@ -1,20 +1,79 @@
-<div class="card" id="moonlitCard" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
-    <div class="title" style="color: red;">MoonlitV2</div>
-    <div class="desc">MoonlitV2 Menu Download</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modzz</title>
+    <style>
+        body {
+            background-color: #0f0f13;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #1a1a24;
+            border: 1px solid #2d2d3d;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .card:hover {
+            border-color: #ff4747;
+        }
+        .title {
+            color: #ff4747;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .desc {
+            color: #a0a0b0;
+            font-size: 14px;
+        }
+        #copyNotification {
+            position: fixed;
+            bottom: 30px;
+            background: #ff4747;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 
-<div class="card" id="lightningCard" onclick="copyLink('https://www.meta.com/en-gb/experiences/lightning-launcher/8715195505254856/')">
-    <div class="title" style="color: red;">Lightning Launcher</div>
-    <div class="desc">Lightning Launcher Open Settings</div>
-</div>
+    <h1 style="color: white; text-shadow: 0 0 10px #ff4747;">Modzz</h1>
 
-<div id="copyNotification" style="display: none; color: white; text-align: center; margin-top: 10px;">Link copied! Paste into your browser</div>
+    <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
+        <div class="title">MoonlitV2</div>
+        <div class="desc">MoonlitV2 Menu Download</div>
+    </div>
 
-<script>
-function copyLink(url) {
-    navigator.clipboard.writeText(url);
-    const note = document.getElementById("copyNotification");
-    note.style.display = "block";
-    setTimeout(() => note.style.display = "none", 2500);
-}
-</script>
+    <div class="card" onclick="copyLink('PASTE_LIGHTNING_LAUNCHER_LINK_HERE')">
+        <div class="title">Lightning Launcher</div>
+        <div class="desc">Lightning Launcher Open Settings</div>
+    </div>
+
+    <div id="copyNotification">Link copied! Paste into your browser</div>
+
+    <script>
+    function copyLink(url) {
+        navigator.clipboard.writeText(url);
+        const note = document.getElementById("copyNotification");
+        note.style.display = "block";
+        setTimeout(() => note.style.display = "none", 2500);
+    }
+    </script>
+
+</body>
+</html>
