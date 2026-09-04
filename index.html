@@ -15,22 +15,6 @@
             min-height: 100vh;
             margin: 0;
         }
-        .page {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .page.active {
-            display: flex;
-        }
-        h1 {
-            color: #ffffff;
-            margin-bottom: 25px;
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
         .card {
             background-color: #131825;
             border: 1px solid #1f293d;
@@ -72,19 +56,9 @@
 </head>
 <body>
 
-    <!-- Home Page Content (Now has the big centered Moonlit cards) -->
-    <div id="home" class="page active">
-        <h1>Modzz</h1>
-
-        <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
-            <div class="title">MoonlitV2</div>
-            <div class="desc">MoonlitV2 Menu Download</div>
-        </div>
-
-        <div class="card" onclick="copyLink('https://www.meta.com/en-gb/experiences/lightning-launcher/8715195505254856/')">
-            <div class="title">Lightning Launcher</div>
-            <div class="desc">Lightning Launcher Open Settings</div>
-        </div>
+    <div class="card" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
+        <div class="title">MoonlitV2</div>
+        <div class="desc">MoonlitV2 Menu Download</div>
     </div>
 
     <div id="copyNotification">Link copied! Paste into your browser</div>
