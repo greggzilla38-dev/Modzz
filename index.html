@@ -1,78 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modzz Hub</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0b0b0f;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-            border-bottom: 3px solid #ff334b;
-            padding-bottom: 10px;
-        }
-        .container {
-            width: 100%;
-            max-width: 450px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            padding: 20px;
-        }
-        .card {
-            background-color: #16161e;
-            border: 1px solid #2a2a3c;
-            border-radius: 12px;
-            padding: 18px 20px;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-        }
-        .card:hover {
-            border-color: #ff334b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 51, 75, 0.2);
-        }
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .card-desc {
-            font-size: 0.85rem;
-            color: #9ab;
-        }
-    </style>
-</head>
-<body>
+<div class="card" id="moonlitCard" onclick="copyLink('https://www.mediafire.com/file/nh0r683kackoa6o/MoonlitV2.apk/file')">
+    <div class="title" style="color: red;">MoonlitV2</div>
+    <div class="desc">MoonlitV2 Menu Download</div>
+</div>
 
-    <h1>Modzz</h1>
+<div class="card" id="lightningCard" onclick="copyLink('https://www.meta.com/en-gb/experiences/lightning-launcher/8715195505254856/')">
+    <div class="title" style="color: red;">Lightning Launcher</div>
+    <div class="desc">Lightning Launcher Open Settings</div>
+</div>
 
-    <div class="container">
-        <a href="#" class="card">
-            <div class="card-title">Example Mod 1</div>
-            <div class="card-desc">Description of what this mod does goes here.</div>
-        </a>
+<div id="copyNotification" style="display: none; color: white; text-align: center; margin-top: 10px;">Link copied! Paste into your browser</div>
 
-        <a href="#" class="card">
-            <div class="card-title">Example Mod 2</div>
-            <div class="card-desc">Another awesome script or tool download.</div>
-        </a>
-    </div>
-
-</body>
-</html>
+<script>
+function copyLink(url) {
+    navigator.clipboard.writeText(url);
+    const note = document.getElementById("copyNotification");
+    note.style.display = "block";
+    setTimeout(() => note.style.display = "none", 2500);
+}
+</script>
